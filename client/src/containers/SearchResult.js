@@ -1,11 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 import EventsCard from '../components/EventsCard';
+import { useHistory } from 'react-router-dom';
 
 const SearchResult = (props) => {
     const [speaker, setSpeaker] = useState(props.match.params.speaker)
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
+    const history = useHistory()
 
     useEffect(() => {
         async function fetchData() {
@@ -23,7 +25,10 @@ const SearchResult = (props) => {
             .then(res => {
                 setData([...res.data])
             })
-            .catch(err => alert("Catch: Reached the end"))
+            .catch(err => {
+                alert("Reached the end")
+                history.push("/")
+            })
     }
 
     const prev = () => {

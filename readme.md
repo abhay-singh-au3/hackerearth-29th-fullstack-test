@@ -6,6 +6,9 @@ Run this command to install the client side / frontend react dependencies
 
 ## npm run dev
 Run this command to run the backend and frontend simultaneously
+
+### Search is Case-sensitive
+
 Note: Make sure you have nodemon installed for this command
 
 

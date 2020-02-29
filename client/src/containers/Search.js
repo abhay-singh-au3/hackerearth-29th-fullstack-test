@@ -11,7 +11,7 @@ const Search = () => {
     const handleSubmit = e => {
         e.preventDefault()
         if (speaker.trim().length > 0) {
-            axios.get(`/${speaker}`)
+            axios.get(`/event/speaker/${speaker}`)
                 .then(res => {
                     if(!res.data.error) {
                         history.push(`/${speaker}`)
